@@ -26,7 +26,7 @@ body {
 
 .shadow{
 	position: absolute;
-	background-color: rgba(0,0,0,0.15);
+	background-color: rgba(0,0,0,0.35);
 	width: 1000px;
 	height: 1000px;
 	z-index: -10;
@@ -113,6 +113,7 @@ button:hover{
 	display: inline-block;
 	margin-right: 50px;
 	box-shadow: 2px 5px 5px black;	
+	transition: transform 0.3s, background 0.3s;
 	
 	
 }
@@ -120,11 +121,15 @@ button:hover{
 .dot p {
 	/* color: rgb(74, 54, 38); */
 	font-size: 40px;
+	font-weight: bolder;	
+
 }
 
 p {
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 40px;
+	text-transform: uppercase;
 }

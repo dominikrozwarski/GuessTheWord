@@ -58,6 +58,7 @@ const lottery = () => {
 	guess.disabled = false;
 	guess.style.backgroundColor = 'rgb(' + [212, 187, 154].join(',') + ')';
 	random = array[Math.floor(Math.random() * array.length)];
+	
 	//getting random word from array
 
 	instruction.textContent = 'Type input and click "guess" button';
@@ -125,11 +126,21 @@ const quessing = () => {
 			if (input.value == element) {
 				goodGuess = document.getElementById(i);
 				goodGuess.style.color = 'white';
+				goodGuess.style.background = 'none';
+				goodGuess.style.boxShadow = 'none';
+				
 			}
 			i++;
+			console.log(newDot);
 		}
 	}
+
+	
 };
+
+
+
+
 
 startGame.addEventListener('click', lottery);
 guess.addEventListener('click', firstCheck);
