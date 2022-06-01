@@ -23,6 +23,9 @@ const array = [
 	'work',
 ];
 
+let k = 10;
+let o = 0;
+
 //array that contain all the words that we can quessing in game
 
 let dotID = 0;
@@ -31,6 +34,7 @@ let random;
 
 let newDot;
 let pass;
+let goodGuess;
 
 const initiate = () => {
 	guess.disabled = true;
@@ -45,6 +49,8 @@ const restartFunction = () => {
 	instruction.textContent = 'Press "start" to initiate the game';
 	instruction.style.color = 'rgb(' + [74, 54, 38].join(',') + ')';
 	initiate();
+	remain.textContent = '';
+	k = 10;
 	//if we press restart the starting parameter accure
 };
 
@@ -80,6 +86,7 @@ const firstCheck = () => {
 	if (input.value.length != 1) {
 		instruction.textContent = 'You must type ONE letter to input';
 		instruction.style.color = 'red';
+
 		//checking if there is only one letter inside the input
 	} else {
 		isItLetter();
@@ -90,23 +97,34 @@ const isItLetter = () => {
 	if (input.value.match(letters)) {
 		instruction.style.color = 'rgb(' + [74, 54, 38].join(',') + ')';
 		instruction.textContent = 'Type input and click "guess" button';
+		quessing();
 	} else {
 		instruction.textContent = 'It must be a LETTER';
 		instruction.style.color = 'red';
-		//checking if there is a letter inside the input 
+		//checking if there is a letter inside the input
 	}
-	quessing();
+
 	//starting function that checking is input = specific letter in dot
 };
 
 const quessing = () => {
+	k--;
+	remain.textContent = `${k} attempts remained`;
+	if (k < 0) {
+		remain.textContent = `You have lost`;
+		guess.disabled = 'true';
+		guess.style.backgroundColor = 'grey';
+	}
+	//value of attempps remaining
+
 	if (random.indexOf(input.value) > -1) {
+		dotID = 0;
 		let i = 0;
+
 		for (const element of random) {
-			if (input.value === element) {
-				let goodGuess = document.getElementById(i);
-				goodGuess.style.color = 'red';
-				//if the value of input appear more that once in word 
+			if (input.value == element) {
+				goodGuess = document.getElementById(i);
+				goodGuess.style.color = 'white';
 			}
 			i++;
 		}

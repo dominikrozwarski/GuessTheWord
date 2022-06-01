@@ -113,10 +113,12 @@ button:hover{
 	display: inline-block;
 	margin-right: 50px;
 	box-shadow: 2px 5px 5px black;	
+	
+	
 }
 
 .dot p {
-	/* color: white; */
+	/* color: rgb(74, 54, 38); */
 	font-size: 40px;
 }
 
