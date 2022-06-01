@@ -106,7 +106,7 @@ const quessing = () => {
 			if (input.value === element) {
 				let goodGuess = document.getElementById(i);
 				goodGuess.style.color = 'red';
-				//if the value of input accure more that once in word 
+				//if the value of input appear more that once in word 
 			}
 			i++;
 		}
