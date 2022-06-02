@@ -24,7 +24,7 @@ const array = [
 ];
 
 let k = 20;
-//numer of trying
+//initial numer of remaining try 
 let o = 0;
 
 //array that contain all the words that we can quessing in game
@@ -32,6 +32,8 @@ let o = 0;
 let dotID = 0;
 let letters = /^[A-Za-z]+$/;
 let random;
+
+
 
 let newDot;
 let pass;

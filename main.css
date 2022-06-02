@@ -79,6 +79,7 @@ input {
 	text-align: center;
 	border-color: rgb(74, 54, 38);
 	box-shadow: 0 0 15px black;
+	text-transform: lowercase;
 
 }
 
