@@ -23,7 +23,8 @@ const array = [
 	'work',
 ];
 
-let k = 10;
+let k = 20;
+//numer of trying
 let o = 0;
 
 //array that contain all the words that we can quessing in game
@@ -36,6 +37,7 @@ let newDot;
 let pass;
 let goodGuess;
 
+
 const initiate = () => {
 	guess.disabled = true;
 	guess.style.backgroundColor = 'grey';
@@ -47,10 +49,10 @@ const restartFunction = () => {
 	startGame.style.backgroundColor = 'rgb(' + [212, 187, 154].join(',') + ')';
 	password.innerHTML = '';
 	instruction.textContent = 'Press "start" to initiate the game';
-	instruction.style.color = 'rgb(' + [74, 54, 38].join(',') + ')';
+	instruction.style.color = 'black';
 	initiate();
 	remain.textContent = '';
-	k = 10;
+	k = 20;
 	//if we press restart the starting parameter accure
 };
 
@@ -58,7 +60,7 @@ const lottery = () => {
 	guess.disabled = false;
 	guess.style.backgroundColor = 'rgb(' + [212, 187, 154].join(',') + ')';
 	random = array[Math.floor(Math.random() * array.length)];
-	
+
 	//getting random word from array
 
 	instruction.textContent = 'Type input and click "guess" button';
@@ -96,7 +98,7 @@ const firstCheck = () => {
 
 const isItLetter = () => {
 	if (input.value.match(letters)) {
-		instruction.style.color = 'rgb(' + [74, 54, 38].join(',') + ')';
+		instruction.style.color = 'black';
 		instruction.textContent = 'Type input and click "guess" button';
 		quessing();
 	} else {
@@ -115,8 +117,10 @@ const quessing = () => {
 		remain.textContent = `You have lost`;
 		guess.disabled = 'true';
 		guess.style.backgroundColor = 'grey';
+		input.value = ''
 	}
 	//value of attempps remaining
+
 
 	if (random.indexOf(input.value) > -1) {
 		dotID = 0;
@@ -128,19 +132,34 @@ const quessing = () => {
 				goodGuess.style.color = 'white';
 				goodGuess.style.background = 'none';
 				goodGuess.style.boxShadow = 'none';
-				
+				//displaying white letters on screan
 			}
 			i++;
-			console.log(newDot);
 		}
 	}
 
-	
+	winner();
 };
 
-
-
-
+const winner = () => {
+	let j = 0;
+	let l = 0;
+	for (const element of random) {
+		goodGuess = document.getElementById(j);
+		//downloading all eleent to check their color of input white = ok
+		if (goodGuess.style.color != '') {
+			l++;
+		}
+		if (l == random.length) {
+			remain.innerHTML = 'You have won';
+			guess.disabled = 'true'
+			guess.style.backgroundColor = 'grey'
+			input.value = ''
+			//comparing length of password to how many color white appear(winning condition)
+		}
+		j++;
+	}
+};
 
 startGame.addEventListener('click', lottery);
 guess.addEventListener('click', firstCheck);

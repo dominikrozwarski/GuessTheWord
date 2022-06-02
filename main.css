@@ -11,25 +11,24 @@ body {
 	width: 100vw;
 	height: 100vh;
 	font-family: 'Noto Sans', sans-serif;
-	background-color: white;
 }
 
 .wrapper {
 	width: 1000px;
 	height: 1000px;
-	background-image: url('https://cdn.pixabay.com/photo/2020/04/15/21/34/wall-5048319_960_720.jpg');
-	background-size: cover;
-	border-radius: 1%;
+	border-radius: 0.5%;
 	box-shadow: 0 0 20px black;
 	z-index: 0;
+	
 }
 
 .shadow{
 	position: absolute;
-	background-color: rgba(0,0,0,0.35);
+	background-color: rgba(0,0,0,0.45);
 	width: 1000px;
 	height: 1000px;
 	z-index: -10;
+	box-shadow: 0 0 1000px;
 }
 
 .header {
@@ -40,7 +39,7 @@ body {
 	align-items: center;
 	font-family: 'Grape Nuts', cursive;
 	font-size: 50px;
-	color: rgb(120, 83, 53);
+	color: rgb(56, 44, 35);
 }
 
 .middle {
@@ -80,7 +79,9 @@ input {
 	text-align: center;
 	border-color: rgb(74, 54, 38);
 	box-shadow: 0 0 15px black;
+
 }
+
 
 button {
 	width: 150px;
@@ -102,13 +103,13 @@ button:hover{
 
 .instruction {
 	font-size: 40px;
-	color: rgb(74, 54, 38);
+
 }
 
 .dot {
 	height: 40px;
 	width: 40px;
-	background-color: rgb(74, 54, 38);
+	background-color: black;
 	border-radius: 50%;
 	display: inline-block;
 	margin-right: 50px;
@@ -119,8 +120,8 @@ button:hover{
 }
 
 .dot p {
-	/* color: rgb(74, 54, 38); */
-	font-size: 40px;
+
+	font-size: 35px;
 	font-weight: bolder;	
 
 }
@@ -132,4 +133,6 @@ p {
 	align-items: center;
 	font-size: 40px;
 	text-transform: uppercase;
+	transition: color 0.3s;
+	
 }
